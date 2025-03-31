@@ -7,7 +7,7 @@ let text = `
 
 `.trim()   
 let buttonMessage= {
-'document': { url: `https://github.com/BrunoSobrino/TheMystic-Bot-MD` },
+'document': { url: `https://github.com/mihas35/whatsapp-bot` },
 'mimetype': `application/${document}`,
 'fileName': `「  Привет !! 」`,
 'fileLength': 9,
@@ -22,7 +22,7 @@ let buttonMessage= {
 'title': 'Лучший Бот ᴡʜᴀᴛsᴀᴘᴘ⁩',
 'body': wm,
 'thumbnail': imagen1,
-'sourceUrl': 'https://www.youtube.com/channel/UCSTDMKjbm-EmEovkygX-lCA'}},
+'sourceUrl': 'https://www.youtube.com'}},
 'caption': text,
 'footer': wm,
 'buttons':[
