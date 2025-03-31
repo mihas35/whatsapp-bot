@@ -1,32 +1,27 @@
-let linkRegex1 = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
-let linkRegex2 = /whatsapp.com\/channel\/([0-9A-Za-z]{20,24})/i;
-export async function before(m, { isAdmin, isBotAdmin, participants }) {
+let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
+export async function before(m, { isAdmin, isBotAdmin }) {
 if (m.isBaileys && m.fromMe)
 return !0
 if (!m.isGroup) return !1
 let chat = global.db.data.chats[m.chat]
 let delet = m.key.participant
 let bang = m.key.id
-let toUser = `${m.sender.split("@")[0]}`
-let aa = toUser + '@s.whatsapp.net'
-const groupAdmins = participants.filter(p => p.admin);
-const listAdmin = groupAdmins.map((v, i) => `*» ${i + 1}. @${v.id.split('@')[0]}*`).join('\n');
+const user = `@${m.sender.split`@`[0]}`;
 let bot = global.db.data.settings[this.user.jid] || {}
-const isGroupLink = linkRegex1.exec(m.text) || linkRegex2.exec(m.text);
+const isGroupLink = linkRegex.exec(m.text)
 const grupo = `https://chat.whatsapp.com`
-if (isAdmin && chat.antiLink && m.text.includes(grupo)) return m.reply(`${lenguajeGB['smsAdwa']()}`)
+if (isAdmin && chat.antiLink && m.text.includes(grupo)) return 
 if (chat.antiLink && isGroupLink && !isAdmin) {
 if (isBotAdmin) {
 const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
-if (m.text.includes(linkThisGroup)) return m.reply(lenguajeGB['smsWaMismoEnlace']())  
+if (m.text.includes(linkThisGroup)) return !0
 }    
-if (!isBotAdmin) return conn.sendMessage(m.chat, { text: `${lenguajeGB['smsAvisoFG']()} ${lenguajeGB['smsAllAdmin']()}`, mentions: [...groupAdmins.map(v => v.id)] }, { quoted: m });
+await conn.sendMessage(m.chat, {text: `╰⊱🚫⊱ *АнтиСсылка* ⊱🚫⊱╮\n\ ${user} в этой группе запрещенны ссылки на другие группы так что придется вас исключить!`, mentions: [m.sender]}, {quoted: m})
+//await conn.sendButton(m.chat, `${lenguajeGB['smsEnlaceWat']()} ${await this.getName(m.sender)} ${isBotAdmin ? '' : `\n\n${lenguajeGB['smsAllAdmin']()}`}`, wm, [`${lenguajeGB['smsApagar']()}`, '/disable antilink'], m)    
+if (!isBotAdmin) return m.reply(`${lenguajeGB['smsAllAdmin']()}`)  
 if (isBotAdmin) {
-await conn.reply(m.chat, `${lenguajeGB['smsEnlaceWat']()} *@${toUser}*`, null, { mentions: [aa] })
 await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
-let responseb = await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-if (responseb[0].status === "404") return   
-} else if (!bot.restrict) return m.reply(`${lenguajeGB['smsAvisoAG']()}${lenguajeGB['smsSoloOwner']()}`)
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 return !0
-}
+}}

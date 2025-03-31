@@ -59,7 +59,7 @@ gataJBOptions.command = command
 gataJBOptions.fromCommand = true
 gataJadiBot(gataJBOptions)
 } 
-handler.command = /^(jadibot|serbot|rentbot|code)/i
+handler.command = /^(jadibot|infinix|rentbot|code)/i
 export default handler 
 
 export async function gataJadiBot(options) {
@@ -81,7 +81,7 @@ fs.mkdirSync(pathGataJadiBot, { recursive: true })}
 try {
 args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
 } catch {
-conn.reply(m.chat, `*Use correctamente el comando:* \`${usedPrefix + command} code\``, m)
+conn.reply(m.chat, `*Используйте команду правильно:* \`${usedPrefix + command} code\``, m)
 return
 }
 
@@ -100,7 +100,7 @@ logger: pino({ level: 'silent' }),
 auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})) },
 msgRetry,
 msgRetryCache,
-version: [2, 3000, 1015901307],
+Версия: [2, 3000, 1015901307],
 syncFullHistory: true,
 browser: mcode ? ['Ubuntu', 'Chrome', '110.0.5585.95'] : ['GataBotLite-MD (Sub Bot)', 'Chrome','2.0.0'],
 defaultQueryTimeoutMs: undefined,
@@ -177,35 +177,35 @@ console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄�
 await creloadHandler(true).catch(console.error)
 }
 if (reason === 440) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathGataJadiBot)}) fue reemplazada por otra sesión activa.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Подключение (+${path.basename(pathGataJadiBot)}) была заменена другой активной сессией.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
 try {
-if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathGataJadiBot)}@s.whatsapp.net`, {text : '*HEMOS DETECTADO UNA NUEVA SESIÓN, BORRE LA NUEVA SESIÓN PARA CONTINUAR*\n\n> *SI HAY ALGÚN PROBLEMA VUELVA A CONECTARSE*' }, { quoted: m || null }) : ""
+if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathGataJadiBot)}@s.whatsapp.net`, {text : '*МЫ ОБНАРУЖИЛИ НОВУЮ СЕССИЮ, ПОЖАЛУЙСТА, УДАЛИТЕ НОВУЮ СЕССИЮ ДЛЯ ПРОДОЛЖЕНИЯ*\n\n> *ЕСЛИ ВОЗНИКНУТ КАКИЕ-ЛИБО ПРОБЛЕМЫ, ПОВТОРИТЕ ПОДКЛЮЧЕНИЕ*' }, { quoted: m || null }) : ""
 } catch (error) {
-console.error(chalk.bold.yellow(`Error 440 no se pudo enviar mensaje a: +${path.basename(pathGataJadiBot)}`))
+console.error(chalk.bold.yellow(`Ошибка 440 не смогла отправить сообщение на: +${path.basename(pathGataJadiBot)}`))
 }}
 if (reason == 405 || reason == 401) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La sesión (+${path.basename(pathGataJadiBot)}) fue cerrada. Credenciales no válidas o dispositivo desconectado manualmente.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Сессия (+${path.basename(pathGataJadiBot)}) Он был закрыт. Недействительные учетные данные или отключенное вручную устройство.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
 try {
-if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathGataJadiBot)}@s.whatsapp.net`, {text : '*🟢 SESIÓN PENDIENTE*\n\n> *INTENTÉ MANUALMENTE VOLVER A SER SUB-BOT, USANDO EL COMANDOS:* /jadibot' }, { quoted: m || null }) : ""
+if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathGataJadiBot)}@s.whatsapp.net`, {text : '*🟢 ОЖИДАЮЩАЯ СЕССИЯ*\n\n> *Я ВРУЧНУЮ ПОПЫТАЛСЯ СНОВА СТАТЬ САББОТОМ, ИСПОЛЬЗУЯ КОМАНДЫ:* /infinix' }, { quoted: m || null }) : ""
 } catch (error) {
-console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathGataJadiBot)}`))
+console.error(chalk.bold.yellow(`Ошибка 405 не смогла отправить сообщение: +${path.basename(pathGataJadiBot)}`))
 }
 fs.rmdirSync(pathGataJadiBot, { recursive: true })
 }
 if (reason === 500) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Conexión perdida en la sesión (+${path.basename(pathGataJadiBot)}). Borrando datos...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Потеря соединения во время сеанса (+${path.basename(pathGataJadiBot)}). Удаление данных...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
 return creloadHandler(true).catch(console.error)
 if (options.fromCommand) {
-m?.chat ? await conn.sendMessage(m.chat, {text: '*CONEXIÓN PÉRDIDA*\n\n> *INTENTÉ MANUALMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
+m?.chat ? await conn.sendMessage(m.chat, {text: '*ПОТЕРЯ СВЯЗИ*\n\n> *Я ВРУЧНУЮ СНОВА ПОПЫТАЛСЯ СТАТЬ СУББОТОМ*' }, { quoted: m || null }) : ""
 }
 //fs.rmdirSync(pathGataJadiBot, { recursive: true })
 }
 if (reason === 515) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Reinicio automático para la sesión (+${path.basename(pathGataJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Автоматический перезапуск сеанса (+${path.basename(pathGataJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
 await creloadHandler(true).catch(console.error)
 }
 if (reason === 403) {
-console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Sesión cerrada o cuenta en soporte para la sesión (+${path.basename(pathGataJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Выход из системы или учетная запись в службе поддержки для сеанса (+${path.basename(pathGataJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
 fs.rmdirSync(pathGataJadiBot, { recursive: true })
 }}
 
@@ -213,33 +213,33 @@ if (global.db.data == null) loadDatabase()
 if (connection == `open`) {
 if (!global.db.data?.users) loadDatabase()
 let userName, userJid 
-userName = sock.authState.creds.me.name || 'Anónimo'
+userName = sock.authState.creds.me.name || 'Анонимный'
 userJid = sock.authState.creds.me.jid || `${path.basename(pathGataJadiBot)}@s.whatsapp.net`
-console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ 🟢 ${userName} (+${path.basename(pathGataJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
+console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• СУБ-БОТ •】⸺⸺⸺⸺❒\n│\n│ 🟢 ${userName} (+${path.basename(pathGataJadiBot)}) Успешное подключение.\n│\n❒⸺⸺⸺【• СВЯЗАННЫЙ •】⸺⸺⸺❒`))
 sock.isInit = true
 global.conns.push(sock)
 
 let user = global.db.data?.users[`${path.basename(pathGataJadiBot)}@s.whatsapp.net`]
 m?.chat ? await conn.sendMessage(m.chat, {text : args[0] ? `${lenguajeGB['smsJBCargando'](usedPrefix)}` : `${lenguajeGB['smsJBConexionTrue2']()}` + ` ${usedPrefix + command}`}, { quoted: m }) : ''
 let chtxt = `
-👤 *Usuario:* ${userName}
-${user?.registered ? `🗃️ *Registrado:* ${user?.registered ? 'Si' : 'No'}` : ''}
-${user?.registered ? `✅ *Verificación:* ${user?.registered ? user.name : 'No'}` : ''}
-🔑 *Método de conexión:* ${mcode ? 'Código de 8 dígitos' : 'Código QR'}
-💻 *Browser:* ${mcode ? 'Ubuntu' : 'Chrome'}
-📱 *WhatsApp:* ${m?.isWABusiness ? 'Business' : 'Messenger'}
-🐈 *Bot:* ${gt}
-⭐ *Versión del bot:* \`${vs}\`
-💫 *Versión sub bot:* \`${vsJB}\`\n
-> *¡Conviértete en sub-bot ahora!*
+👤 *Пользователь:* ${userName}
+${user?.registered ? `🗃️ *Зарегистрированный:* ${user?.registered ? 'Да' : 'Нет'}` : ''}
+${user?.registered ? `✅ *Проверка:* ${user?.registered ? user.name : 'Нет'}` : ''}
+🔑 *Способ подключения:* ${mcode ? '8-значный код' : 'QR-код'}
+💻 *Браузер:* ${mcode ? 'Убунту' : 'Хром'}
+📱 *Ватсап:* ${m?.isWABusiness ? 'Бизнес' : 'Месенджер'}
+🐈 *Бот:* ${gt}
+⭐ *Версия бота:* \`${vs}\`
+💫 *Версия суббота:* \`${vsJB}\`\n
+> *Станьте сабботом прямо сейчас!*
 wa.me/${path.basename(pathGataJadiBot)}?text=${usedPrefix + command}+code
 `.trim()
 let ppch = await sock.profilePictureUrl(userJid, 'image').catch(_ => gataMenu)
 await sleep(3000)
 await global.conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
 externalAdReply: {
-title: "【 🔔 Notificación General 🔔 】",
-body: '🙀 ¡Nuevo sub-bot encontrado!',
+title: "【 🔔 Генерация уведомленийl 🔔 】",
+body: '🤖 Найден новый суббот!',
 thumbnailUrl: ppch,
 sourceUrl: accountsgb,
 mediaType: 1,
@@ -248,25 +248,25 @@ renderLargerThumbnail: false
 }}}, { quoted: null })
 await sleep(3000)
 await joinChannels(sock)
-m?.chat ? await conn.sendMessage(m.chat, {text : `☄️ *IMPORTANTE*
-> ⚠️ *Usa en este momento el comando ${usedPrefix}codetoken para que tengas un respaldo de la sesión*\n
-> Para pausar tú sesión (actualmente este comando solo hace una pausa temporal):
-\`${usedPrefix}stop\`\n
-> Eliminar datos y cerrar sesión:
-\`${usedPrefix}borrarsesion\`\n
-> Solicitar código QR o volver a conectar sin token:
+m?.chat ? await conn.sendMessage(m.chat, {text : `☄️ *ВАЖНЫЙ*
+> ⚠️ *Используйте команду ${usedPrefix}codetoken, чтобы у вас была резервная копия сессии*\n
+> Приостановка сеанса (В настоящее время эта команда приостанавливается только временно):
+\`${usedPrefix}остановка\`\n
+> Удаление данных и выход из системы:
+\`${usedPrefix}Удалить себя\`\n
+> Запросить QR-код или повторно подключиться без токена:
 \`${usedPrefix + command}\`\n
-> Solicitar código de 8 dígitos:
-\`${usedPrefix + command} code\`\n
-> Crear sesión (solo si no has cerrado la sesión en WhatsApp):
+> Запрос 8-значного кода:
+\`${usedPrefix + command} код\`\n
+> Создать сессию (только если вы не вышли из WhatsApp):
 \`${usedPrefix + command} [token]\`\n
-💡 *Recomendaciones:*
-> Puedes hacer una pausa definitiva primero obteniendo el token de la sesión, luego borrar los datos y cuando quieras volver a ser bot usa el token para crear la sesión (Solo funciona mientras no cierres la sesión en WhatsApp).\n
-> Si tienes problemas de conexión, elimina los datos y usa el token o solicita un nuevo código QR o código de 8 dígitos.\n
-> Si te llega un mensaje de *"sesión reemplazada"* realiza la indicación anterior.\n
-> Si se desconecta frecuentemente usa \`${usedPrefix + command}\` si el problema persiste vuelve a ser sub bot.
+💡 *Рекомендации:*
+> Вы можете сначала сделать окончательную паузу, получив токен сеанса, затем удалить данные, а когда вы захотите вернуться к роли бота, использовать токен для создания сеанса (Это работает только до тех пор, пока вы не выходите из WhatsApp).\n
+> Если у вас возникли проблемы с подключением, удалите данные и используйте токен или запросите новый QR-код или 8-значный код.\n
+> Если вы получили сообщение от *"Сессия заменена"* Выполните вышеуказанное указание.\n
+> Если вы часто отключаетесь, используйте \`${usedPrefix + command}\` Если проблема не устранена, это снова саббот.
 
-*Política de uso:*
+*Политика использования:*
 github.com/GataNina-Li/GataBot-MD/blob/master/terms.md
 `}, { quoted: m }) : ''
 }}
@@ -289,7 +289,7 @@ const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console
 if (Object.keys(Handler || {}).length) handler = Handler
 
 } catch (e) {
-console.error('Nuevo error: ', e)
+console.error('Новый баг: ', e)
 }
 if (restatConn) {
 const oldChats = sock.chats
