@@ -4,7 +4,7 @@ global.dfail('admin', m, conn)
 throw false
 }
 let pesan = args.join` `
-let oi = `ღ ВЫЗОВ ВСЕХ УЧАТСНИКОВ ГРУППЫ!!`
+let oi = `*ღ ВЫЗОВ ВСЕХ УЧАТСНИКОВ ГРУППЫ!*`
 let teks = `╭━〔 *ВЫЗОВ ВСЕХ.* 〕
 `
 for (let mem of participants) {
