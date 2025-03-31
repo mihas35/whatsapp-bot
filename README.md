@@ -57,7 +57,7 @@ termux-setup-storage
 apt update
 apt upgrade
 pkg install -y git nodejs ffmpeg imagemagick yarn
-git clone https://github.com/GataNina-Li/GataBotLite-MD 
+git clone https://github.com/mihas35/whatsapp-bot 
 cd GataBotLite-MD
 yarn install
 npm install
@@ -162,8 +162,8 @@ npm install -g ffmpeg imagemagick git yarn && npm i && node --no-warnings index.
 * Descargar e instala FFmpeg [`Aquí`](https://ffmpeg.org/download.html) (**No olvide agregar FFmpeg a la variable de entorno PATH**)
 * Descargar e instala ImageMagick [`Aquí`](https://imagemagick.org/script/download.php)
 ```bash
-git clone https://github.com/GataNina-Li/GataBotLite-MD
-cd GataBotLite-MD
+git clone https://github.com/mihas35/whatsapp-bot
+cd whatsapp-bot
 npm install -g yarn
 yarn
 npm install 
