@@ -8,10 +8,15 @@ import axios from 'axios'
 import moment from 'moment-timezone'
 import { en, es, id, ar, pt, de, it } from './lib/idiomas/total-idiomas.js'
 
-//мод
+// ES ➜ Сначала я добавил номер бота в качестве приоритетного
+
+// ES ➜ Если вы хотите получать отчеты, необходимо использовать три параметра (Number, name и true).
+// EN ➜ Сначала добавьте номер бота в качестве приоритетного
+
+// EN ➜ Если вы хотите получать отчеты, необходимо использовать три параметра (Number, name и true).
 global.owner = [
-['5214774444444', '𝙂𝙖𝙩𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿 🌻🐈', true], 
-['593968263524', '𝙂𝘽 𝘼𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖 🌻🐈', true],
+['79940139737', '🇧 🇴 🇹', true], 
+['79520830782', '🇨 🇷 🇪 🇦 🇩 🇴 🇷', true],
 ['573012482597'],
 ['5218715746374'],
 ['5492266613038'], 
@@ -24,22 +29,23 @@ global.owner = [
 global.mods = [] 
 global.prems = []
 
-// Cambiar a false para desactivar en "auto-reconexion" de sub-bots
+// Измените значение на false, чтобы отключить "автоподключение" суб-ботов.
+
 global.gataJadibts = true
 
-// Cambiar a false para usar el Bot desde el mismo numero del Bot.
+// Измените значение на false, чтобы использовать бота с того же номера, что и бот..
 global.isBaileysFail = true
 
 // ❰❰ methodCode ❱❱
-// [ES] > Agregue el número del Bot en "botNumberCode" si desea recibir código de 8 dígitos sin registrar el número en la consola.
-// [EN] > Add the Bot number in "botNumberCode" if you want to receive 8-digit code without registering the number in the console.
-global.botNumberCode = "" //example: "+59309090909"
-global.confirmCode = "" // No tocar esto : Do not touch this line
+// [ES] > Добавьте номер бота в "botNumberCode", если хотите получить 8-значный код без регистрации номера в консоли.
+// [EN] > Добавьте номер бота в "botNumberCode", если хотите получить 8-значный код без регистрации номера в консоли.
+global.botNumberCode = "" //пример: "+59309090909"
+global.confirmCode = "" //пример
+// ES ➜ Добавьте код языка, который будет использоваться GataBot
+// EN ➜ Добавьте код языка, который будет использовать GataBot
 
-// ES ➜ Agregue el código de idioma el cual usará GataBot  
-// EN ➜ Add the language code which GataBot will use
 //  es = Español      id = Bahasa Indonesia       ar = عرب
-//  en = English      pt = Português              de = Deutsch
+//  en = English      pt = Португальский              de = Deutsch
 //  it = Italiano
 global.lenguajeGB = es  //<-- Predeterminado en idioma Español 
 
@@ -76,8 +82,8 @@ global.fetch = fetch
 global.axios = axios
 global.moment = moment	
 
-global.packname = '𝙂𝙖𝙩𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿 🌻🐈'
-global.author = '𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨'
+global.packname = ''
+global.author = '꧁☠︎︎🅼🅸🅺🅷🅰︎🅸🅻☠︎︎꧂'
 global.policyGB = 'github.com/GataNina-Li/GataBot-MD/blob/master/terms.md'
 
 // ES ➜ Está parte es para mostrar el contacto de alguien al usar #contacto
@@ -95,10 +101,10 @@ global.country = '' //agrega tú país ejemplo: 🇪🇨
 
 global.vs = '1.4.0'
 global.vsJB = '5.0 (beta)'
-global.gt = '𝙂𝙖𝙩𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿'
+global.gt = '🇮 🇳 🇫 🇮 🇳 🇮 🇽'
 
-global.wm = '𝙂𝙖𝙩𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿 🌻🐈 : 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨'
-global.igfg = '𝙂𝙖𝙩𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿'
+global.wm = '🇮 🇳 🇫 🇮 🇳 🇮 🇽 : 🇮 🇳 🇫 🇮 🇳 🇮 🇽'
+global.igfg = '🇮 🇳 🇫 🇮 🇳 🇮 🇽'
 global.nomorown = owner[0][0]
 
 global.htki = '*⭑•̩̩͙⊱•••• ☪*'
@@ -114,16 +120,16 @@ global.waitemot = '⌛'
 global.waitemot2 = '⏳'
 
 // redes
-global.tk = 'https://www.tiktok.com/@gata_dios'
-global.ths = 'https://www.threads.net/@gata_dios'
-global.yt = 'https://youtube.com/@gatadios'
-global.yt2 = 'https://youtu.be/Ko019wvu2Tc'
-global.ig = 'https://www.instagram.com/gata_dios'
-global.md = 'https://github.com/GataNina-Li/GataBotLite-MD'
-global.fb = 'https://www.facebook.com/groups/872989990425789'
-global.paypal = 'https://paypal.me/OficialGD'
-global.asistencia = 'https://wa.me/message/MEKOUFBEOG5ED1'
-global.tg = 'https://t.me/globalgb' // canal
+global.tk = 'https://www.tiktok.com'
+global.ths = 'https://www.threads.net'
+global.yt = 'https://youtube.com'
+global.yt2 = 'https://youtu.be/'
+global.ig = 'https://www.instagram.com/'
+global.md = 'https://github.com'
+global.fb = 'https://www.facebook.com/groups/'
+global.paypal = 'https://paypal.me/'
+global.asistencia = 'https://wa.me/'
+global.tg = 'https://t.me/' // canal
 
 // canales
 global.canal1 = "https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A"
@@ -149,18 +155,18 @@ global.nnnttt5 = 'https://chat.whatsapp.com/HOCsvLox0Ui7cwzTCeFhPP' //A.T.M.M
 
 // Imágenes locales
 global.imagen1 = fs.readFileSync('./media/menus/Menu3.jpg')
-global.imagen2 = fs.readFileSync('./media/menus/img1.jpg')
-global.imagen3 = fs.readFileSync('./media/menus/img2.jpg')
-global.imagen4 = fs.readFileSync('./media/menus/img3.jpg')
-global.imagen5 = fs.readFileSync('./media/menus/img4.jpg')
-global.imagen6 = fs.readFileSync('./media/menus/img5.jpg')
-global.imagen7 = fs.readFileSync('./media/menus/img6.jpg')
-global.imagen8 = fs.readFileSync('./media/menus/img7.jpg')
-global.imagen9 = fs.readFileSync('./media/menus/img8.jpg')
-global.imagen10 = fs.readFileSync('./media/menus/img9.jpg')
-global.imagen11 = fs.readFileSync('./media/menus/img10.jpg')
-global.imagen12 = fs.readFileSync('./media/menus/img11.jpg')
-global.imagen13 = fs.readFileSync('./media/menus/img12.jpg')
+global.imagen2 = fs.readFileSync('./media/menus/avatarka1.jpg')
+global.imagen3 = fs.readFileSync('./media/menus/avatarka2.jpg')
+global.imagen4 = fs.readFileSync('./media/menus/avatarka3.jpg')
+global.imagen5 = fs.readFileSync('./media/menus/avatarka4.jpg')
+global.imagen6 = fs.readFileSync('./media/menus/avatarka5.jpg')
+global.imagen7 = fs.readFileSync('./media/menus/avatarka6.jpg')
+global.imagen8 = fs.readFileSync('./media/menus/avatarka7.jpg')
+global.imagen9 = fs.readFileSync('./media/menus/avatarka8.jpg')
+global.imagen10 = fs.readFileSync('./media/menus/avatarka9.jpg')
+global.imagen11 = fs.readFileSync('./media/menus/avatarka10.jpg')
+global.imagen12 = fs.readFileSync('./media/menus/avatarka11.jpg')
+global.imagen13 = fs.readFileSync('./media/menus/avatarka12.jpg')
 
 // Imágenes en la nube
 global.img = 'https://i.imgur.com/AwlL9kc.jpeg'
