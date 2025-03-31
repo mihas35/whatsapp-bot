@@ -1,13 +1,13 @@
 /*⚠ PROHIBIDO EDITAR ⚠
-Este codigo fue modificado, adaptado y mejorado por
-- ReyEndymion >> https://github.com/ReyEndymion
+Этот код был изменен, адаптирован и улучшен
+- mihas35 >> https://github.com/mihas35
 El codigo de este archivo esta inspirado en el codigo original de:
 - Aiden_NotLogic >> https://github.com/ferhacks
-*El archivo original del MysticBot-MD fue liberado en mayo del 2024 aceptando su liberacion*
-El codigo de este archivo fue parchado en su momento por:
-- BrunoSobrino >> https://github.com/BrunoSobrino
-Contenido adaptado para GataBot-MD por:
-- GataNina-Li >> https://github.com/GataNina-Li
+*Исходный файл InfinixBot-MD был выпущен в мае 2024 года, приняв его релиз*
+Код для этого файла был в свое время исправлен:
+- mihas35 >> https://github.com/mihas35
+Контент, адаптированный для InfinixBot-MD компанией:
+- mihas35 >> https://github.com/mihas35
 - elrebelde21 >> https://github.com/elrebelde21
 */
  
@@ -109,7 +109,7 @@ if (store) {
 //const msg = store.loadMessage(key.remoteJid, key.id)
 //return msg.message && undefined
 } return {
-conversation: 'GataBotLite-MD',
+conversation: 'InfinixBotLite-MD',
 }}} 
 
 let sock = makeWASocket(connectionOptions)
