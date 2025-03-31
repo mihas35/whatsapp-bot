@@ -58,7 +58,7 @@ apt update
 apt upgrade
 pkg install -y git nodejs ffmpeg imagemagick yarn
 git clone https://github.com/mihas35/whatsapp-bot 
-cd GataBotLite-MD
+cd whatsapp-bot 
 yarn install
 npm install
 npm start
