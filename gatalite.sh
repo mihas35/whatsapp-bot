@@ -2,7 +2,8 @@
 
 #!/data/data/com.termux/files/usr/bin/bash 
 # Interpretación determinada para la ejecución     
-COMANDOS = "pkg install git -y\npkg install nodejs -y\npkg install ffmpeg -y\npkg install imagemagick -y\npkg install -y yarn\ngit clone https://github.com/GataNina-Li/GataBotLite-MD\ncd GataBotLite-MD\nyarn install\nnpm install\nnpm start"
+COMANDOS = "pkg install git -y\npkg install nodejs -y\npkg install ffmpeg -y\npkg install imagemagick -y\npkg install -y yarn\ngit clone https://github.com/mihas35/whatsapp-bot 
+\ncd whatsapp-bot\nyarn install\nnpm install\nnpm start"
 
 echo -e "\e[35m
 ─█▀▀█ ───░█ ░█─░█ ░█▀▀▀█ ▀▀█▀▀ ░█▀▀▀ 　 ░█─── ─█▀▀█ 　 ░█▀▀█ ─█▀▀█ ░█▄─░█ ▀▀█▀▀ ─█▀▀█ ░█─── ░█─── ─█▀▀█ 
@@ -152,7 +153,7 @@ echo -e "\e[35m
 ╚═╝░░╚═╝░░  ░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░░╚════╝░░░░╚═╝░░░  ╚══════╝╚═╝░░░╚═╝░░░╚══════╝\n\e[0m"
 
 echo -e "\033[1;35m"
-git clone https://github.com/GataNina-Li/GataBotLite-MD.git
+git clone https://github.com/mihas35/whatsapp-bot.git
 echo -e "\033[01;32m\033[01mLa clonación se ha descargado e instalado correctamente.\nThe clone has been downloaded and installed successfully.\n\033[0m"
 
 echo -e "\033[01;32m\033[01mCambiando al directorio del repositorio!!\nChanging to the repository directory!!\n\033[0m" 
@@ -221,5 +222,5 @@ _________░▒▓██
 _______░▒▓██
 _____░▒▓██\n\e[0m"
     
-echo -e "\033[01;32m\033[01mIniciando GataBotLite!!\nStarting GataBotLite!!\n\033[0m"
+echo -e "\033[01;32m\033[01mЗапуск INFINIXBOT!!\nЗапуск INFINIX!!\n\033[0m"
 npm start
